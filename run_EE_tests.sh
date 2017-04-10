@@ -15,8 +15,12 @@ echo done.
 
 # Finally run protractor
 echo Running tests...
-node_modules/protractor/bin/protractor protractorEE.config.js --params.login.user=$1 --params.login.password=$2
+set +x
+cat ~/payload/jenkins-env | grep EE_TEST > ~/.ee_test_params
+. ~/.ee_test_params
+node_modules/protractor/bin/protractor protractorEE.config.js --params.login.user=$EE_TEST_USERNAME --params.login.password=$EE_TEST_PASSWORD
 TEST_RESULT=$?
+set -x
 
 # Cleanup webdriver-manager and web app processes
 fuser -k -n tcp 4444
