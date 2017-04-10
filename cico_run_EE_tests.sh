@@ -35,5 +35,5 @@ mkdir -p dist && docker run --detach=true --name=fabric8-planner-builder --user=
 docker exec fabric8-planner-builder npm install
 
 ## Exec EE tests
-docker exec fabric8-planner-builder ./run_EE_tests.sh $1 $2
+docker exec fabric8-planner-builder ./run_EE_tests.sh
 
