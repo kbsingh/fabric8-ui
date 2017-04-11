@@ -36,4 +36,3 @@ docker exec fabric8-planner-builder npm install
 
 ## Exec EE tests
 docker exec fabric8-planner-builder ./run_EE_tests.sh
-
